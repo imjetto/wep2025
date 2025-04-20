@@ -1,6 +1,14 @@
-<h1> chapter6 </h1>
+<h1>chapter6</h1>
+<p id="result">키를 눌러보세요!</p>
 
-const button = document.querySelector("button");
-button.addEventListener("click", () => {
-document.body.style.backgroundColor = "green";
+<script>
+const body = document.body;
+const result = document.querySelector("#result");
+
+body.addEventListener("keydown", (e) => {
+  result.innerText = `
+code : ${e.code},
+key : ${e.key}
+`;
 });
+</script>
