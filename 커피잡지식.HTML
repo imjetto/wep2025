@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>커피잡지식</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 상단 헤더 -->
+  <header>
+    <h1>☕ 커피잡지식</h1>
+    <nav>
+      <ul>
+        <!-- 클릭하면 잡지식코너 섹션(#intro)으로 스크롤 -->
+        <li><button data-target="intro">카페소개</button></li>
+        <li><button data-target="intro">추출레시피</button></li>
+        <li><button data-target="intro">변수</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 히어로 섹션 -->
+  <section class="hero">
+    <!-- 나중에 assets/coffee.jpg 같은 경로에 사진 추가해주세요 -->
+    <img src="assets/coffee.jpg" alt="커피 이미지" />
+    <button id="scrollBtn">더 알아보기</button>
+  </section>
+
+  <!-- 잡지식코너 섹션 -->
+  <section id="intro">
+    <h2>✎ 잡지식코너</h2>
+    <div class="banners">
+      <div class="banner">
+        <button onclick="location.href='cafe.html'">카페소개</button>
+      </div>
+      <div class="banner">
+        <button onclick="location.href='recipe.html'">추출레시피</button>
+      </div>
+      <div class="banner">
+        <button onclick="location.href='variable.html'">변수</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
