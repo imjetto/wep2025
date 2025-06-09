@@ -11,7 +11,7 @@
         <h1>☕ 에스프레소 추출 변수</h1>
         <nav>
             <ul>
-                <li><button onclick="location.href='teamproject.html'">홈으로 돌아가기</button></li>
+                <li><button class="page-move-btn" data-target="teamproject.html">홈으로 돌아가기</button></li>
             </ul>
         </nav>
     </header>
@@ -26,28 +26,34 @@
         </p>
 
         <section class="variable-overview-banners">
+            <!-- 커피량(Dose) 배너 -->
             <div class="variable-overview-item" data-variable="dose">
                 <img src="asset/dose_thumbnail.jpg" alt="커피량 미리보기 사진" class="overview-photo" onerror="this.onerror=null; this.src='https://placehold.co/300x200/F0F0F0/333333?text=Coffee+Dose';">
                 <h3 class="overview-name">커피량 (Dose)</h3>
             </div>
+            <!-- 추출량(Extraction volume) 배너 -->
             <div class="variable-overview-item" data-variable="extraction-volume">
                 <img src="asset/extraction_volume_thumbnail.jpg" alt="추출량 미리보기 사진" class="overview-photo" onerror="this.onerror=null; this.src='https://placehold.co/300x200/F0F0F0/333333?text=Extraction+Volume';">
                 <h3 class="overview-name">추출량 (Extraction volume)</h3>
             </div>
+            <!-- 추출시간(Extraction time) 배너 -->
             <div class="variable-overview-item" data-variable="extraction-time">
                 <img src="asset/extraction_time_thumbnail.jpg" alt="추출시간 미리보기 사진" class="overview-photo" onerror="this.onerror=null; this.src='https://placehold.co/300x200/F0F0F0/333333?text=Extraction+Time';">
                 <h3 class="overview-name">추출시간 (Extraction time)</h3>
             </div>
+            <!-- 분쇄도(Grind Size) 배너 -->
             <div class="variable-overview-item" data-variable="grind-size">
                 <img src="asset/grind_size_thumbnail.jpg" alt="분쇄도 미리보기 사진" class="overview-photo" onerror="this.onerror=null; this.src='https://placehold.co/300x200/F0F0F0/333333?text=Grind+Size';">
                 <h3 class="overview-name">분쇄도 (Grind Size)</h3>
             </div>
+            <!-- 추출 온도(Temperature) 배너 -->
             <div class="variable-overview-item" data-variable="temperature">
                 <img src="asset/temperature_thumbnail.jpg" alt="추출 온도 미리보기 사진" class="overview-photo" onerror="this.onerror=null; this.src='https://placehold.co/300x200/F0F0F0/333333?text=Temperature';">
                 <h3 class="overview-name">추출 온도 (Temperature)</h3>
             </div>
         </section>
 
+        <!-- 상세 추출 변수 정보 섹션 (기본적으로 숨겨짐) -->
         <section class="variable-detail-section" id="dose-detail">
             <h2 class="variable-name">커피량 (Dose)</h2>
             <div class="variable-content">
@@ -129,7 +135,7 @@
                         <strong>3. 추출 온도의 안정성과 머신 특성</strong><br>
                         실제로 계속되는 추출 상황에서 추출 온도는 꽤나 변동성이 큰 변수이기 때문에 일반적으로 에스프레소 머신의 성능을 가늠하는 중요한 지표로 사용되기도 합니다. 추출 온도의 안정성은 추출의 일관성과 직접적으로 결부되어 있는데, 반복되는 추출에서도 동일한 추출 온도 유지를 통해 고품질의 에스프레소를 얻을 수 있어야 한다는 점이 바로 그것입니다. 에스프레소 머신들은 각기 다른 추출 온도 특성을 지니고 있기에 올바른 추출을 위해서는 머신마다의 온도 특성을 파악하는 것이 중요합니다. 각기 다른 머신들이라 할지라도 공기 중에 노출되어 있는 그룹 헤드의 하단 부분은 이상적인 추출수의 온도보다 낮은 온도를 가지고 있습니다. 이런 이유로 추출에 앞서 소량의 물을 흘려주어 추출 온도의 안정성을 높여주는 것은 공통적으로 적용되는 방법이기도 합니다. 다만 일반적으로 열교환 방식(HX)의 에스프레소 머신보다 추출 온도가 안정적이라 평가되는 듀얼 보일러 머신의 경우는 추출 전 소량의 물만 흘려주어도 안정적인 추출 온도를 얻을 수 있다고 알려져 있습니다.<br><br>
                         <strong>4. 쿨링 플러시 (Cooling Flush)</strong><br>
-                        열교환 방식(Heat Exchange) 에스프레소 머신은 중탕 가열 방식으로 추출수를 가열하는 방식이며 적합한 추출 온도를 얻기 위해서는 추가적인 물 흘림 테크닉이 요구되기도 합니다. 일정 시간 이상 유휴 시간이 주어지게 되면 열교환기 내부의 추출수는 외부의 보일러로부터 이상적인 추출 온도 이상으로 과열되게 됩니다. 이 경우 과열된 추출수를 흘려보내 적정한 온도로 추출 온도를 유지할 필요가 있는데, 이를 **쿨링 플러시(Cooling flush)**라고 부릅니다. 과열된 열수를 배출하게 되면 끓는 듯한 소리와 함께 마치 춤을 추듯 물줄기가 요동을 치는 현상이 관찰되며 이를 **워터 댄싱(Water Dancing)**이라 부릅니다. 일반적으로 쿨링 플러시는 이 워터 댄싱이 사라질 때까지 실시하게 되며 이 과정에서 끓는점에 가까웠던 물의 온도가 93도 인근의 추출에 적합한 온도까지 떨어지게 됩니다. 이후 머신의 특성에 따라 바로 추출을 실시하거나, 조금의 온도 회복 시간을 부여한 다음 추출을 실시할 수도 있습니다.<br><br>
+                        열교환 방식(Heat Exchange) 에스프레소 머신은 중탕 가열 방식으로 추출수를 가열하는 방식이며 적합한 추출 온도를 얻기 위해서는 추가적인 물 흘림 테크닉이 요구되기도 합니다. 일정 시간 이상 유휴 시간이 주어지게 되면 열교환기 내부의 추출수는 외부의 보일러로부터 이상적인 추출 온도 이상으로 과열되게 됩니다. 이 경우 과열된 추출수를 흘려보내 적정한 온도로 추출 온도를 유지할 필요가 있는데, 이를 **쿨링 플러시(Cooling flush)**라고 부릅니다. 과열된 열수를 배출하게 되면 끓는 듯한 소리와 함께 마치 춤을 추듯 물줄기가 요동을 치는 현상이 관찰되며 이를 **워터 댄싱(Water Dancing)**이라 부릅니다. 일반적으로 쿨링 플러시는 이 워터 댄싱이 사라질 때까지 실시하게 되며 이 과정에서 끓는점에 가까웠던 물의 온도가 93도 인근의 추출에 적합한 온도까지 떨어지게 됩니다. 이후 머신의 특성에 따라 바로 추출을 실시하거나, 조금의 온도 회복 시간을 부여한 다음 추출할 수도 있습니다.<br><br>
                         <strong>5. 결론</strong><br>
                         추출 온도에 대한 논의는 꾸준히 이루어져 왔으며 현재에 이르러 추출 과정에서 온도 변화가 거의 없는 고가의 에스프레소 머신들도 활발히 보급되고 있습니다. 하지만 중요한 점은 본인이 사용하고 있는 에스프레소 머신의 온도 특성을 적절히 파악한다면 그에 걸맞은 좋은 추출 온도를 얻을 수 있다는 것입니다. 조금 더 시간이 소요되더라도 경험을 통해 머신이 가진 추출 온도의 특성과 다양한 커피와의 궁합을 직접 조율해보는 것은 흥미로운 경험을 선사할 것입니다.
                     </p>
@@ -137,6 +143,10 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 에스프레소 연구소. 모든 권리 보유.</p>
+    </footer>
 
     <script src="variable-script.js"></script>
 </body>
