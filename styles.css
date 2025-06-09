@@ -78,7 +78,7 @@ header nav ul {
 main {
     flex: 1; /* 푸터를 하단에 고정 */
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 1400px; /* 여기를 1200px에서 1400px로 늘림 */
     margin: 2rem auto;
     background-color: var(--bg-white);
     border-radius: 12px;
@@ -453,8 +453,12 @@ main h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    /* gap: 2rem; -> gap을 1.5rem으로 줄여서 더 많은 공간 확보 */
+    gap: 1.5rem;
     padding: 1rem;
+    /* max-width를 추가하거나 main의 max-width를 활용 */
+    max-width: 1300px; /* main의 max-width가 1400px이므로, 여기를 1300px로 설정하여 여백 확보 */
+    margin: 0 auto; /* 중앙 정렬 */
 }
 
 .recipe-item {
@@ -462,8 +466,10 @@ main h2 {
     border-radius: 12px;
     padding: 2rem;
     flex: 1;
-    min-width: 300px;
-    max-width: 380px;
+    /* min-width: 300px; -> 더 넓은 최소 너비 설정 */
+    min-width: 380px; /* 각 칸의 최소 너비를 380px로 늘림 */
+    /* max-width: 380px; -> 더 넓은 최대 너비 설정 또는 제거 */
+    max-width: 450px; /* 각 칸의 최대 너비를 450px로 늘림. flex:1이므로 공간이 충분하면 max-width까지 늘어남 */
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
