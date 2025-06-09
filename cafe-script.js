@@ -3,15 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailSections = document.querySelectorAll('.cafe-detail-section');
 
     // 페이지 로드 시 모든 상세 섹션을 숨깁니다.
-    // 이 부분은 CSS에서 `display: none;`으로 처리하는 것이 더 일반적입니다.
-    // 하지만 JS에서 제어해야 한다면 아래 코드를 사용합니다.
+    // CSS에서 'display: none;'으로 처리하는 것이 더 좋지만, JS에서 제어한다면 이 코드를 사용합니다.
     detailSections.forEach(section => {
-        section.style.display = 'none'; // 초기에는 모두 숨김
-        section.classList.remove('active'); // active 클래스도 제거
+        section.style.display = 'none';
+        section.classList.remove('active');
     });
 
-    // (선택 사항) 페이지 로드 시 첫 번째 카페의 상세 정보를 보여줍니다.
-    // 만약 초기 상태에 아무것도 보이지 않게 하려면 이 블록을 삭제하세요.
+    // (선택 사항) 페이지 로드 시 첫 번째 카페의 상세 정보를 기본으로 보여줍니다.
+    // 아무것도 보이지 않게 하려면 이 블록을 삭제하세요.
     if (overviewItems.length > 0) {
         overviewItems[0].classList.add('selected'); // 첫 번째 개요 항목 활성화
         const firstCafeId = overviewItems[0].dataset.cafe;
