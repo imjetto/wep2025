@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         location.href = 'variable.html';
     });
 
-    // 잡지식 코너 배너 버튼 이벤트 리스너 (선택 사항: 네비게이션과 동일 기능)
+    // 잡지식 코너 배너 버튼 이벤트 리스너
     document.getElementById('intro-cafe-btn').addEventListener('click', () => {
         location.href = 'cafe.html';
     });
