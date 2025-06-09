@@ -211,3 +211,85 @@ nav button:hover {
         padding: 1.5rem;
     }
 }
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>추출레시피</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header>
+        <h1>☕ 추출레시피</h1>
+        <nav>
+            <ul>
+                <li><button onclick="location.href='teamproject.html'">홈으로 돌아가기</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="recipe-main-content">
+        <h2>✎ 다양한 추출 레시피</h2>
+        <section class="recipe-grid-container">
+            <div class="recipe-item">
+                <h3>1. 🧮 4:6 메소드 (Tetsu Kasuya)</h3>
+                <div class="recipe-details">
+                    <p>
+                        **준비**<br>
+                        원두 20 g, 물 300 g, 분쇄도는 중–거칠게, 물 온도 약 93 °C<br><br>
+                        **단계 흐름**<br>
+                        0:00–0:15 — 60 g 물을 중앙부터 나선형으로 부어 ‘블룸’ 시작.<br>
+                        0:15–0:45 — 추출 안정화 30초.<br>
+                        0:45–1:00 — 짧게 또 60 g 추출.<br>
+                        반복 구조 — ‘붓기 15초 + 기다림 30초’를 총 5회 반복 (총 300 g 붓고, 약 3분 소요).<br>
+                        3:30경 — 드리퍼 제거 및 추출 종료.<br><br>
+                        **푸어 방식**<br>
+                        중앙 → 바깥 → 중앙 순 나선형 흐름;<br>
+                        처음 두 번은 풍미 조절, 마지막 세 번은 농도 조절
+                    </p>
+                </div>
+            </div>
+
+            <div class="recipe-item">
+                <h3>2. 🔄 하이브리드 침지–포어오버 (Emi Fukahori’s Hario Switch)</h3>
+                <div class="recipe-details">
+                    <p>
+                        **준비**<br>
+                        원두 14 g, 물 200 g, 온도 93 °C<br><br>
+                        **단계 흐름**<br>
+                        0:00 — Bloom: 밸브 닫고 물 50 g 붓기.<br>
+                        0:00–0:30 — 30초 침지 유지.<br>
+                        0:30 — 밸브 개방, 물 150 g을 중심에 연속적으로 붓기(1분 10초까지)<br>
+                        1:10~2:20 — 총 2분 20초까지 추출 유지.<br>
+                        2:20 — 추출 완료<br><br>
+                        **푸어 방식**<br>
+                        처음엔 침지, 이후는 중심 향해 연속 붓기;<br>
+                        물 공급량과 온도 변화로 단맛, 산미, 바디 균형 조절
+                    </p>
+                </div>
+            </div>
+
+            <div class="recipe-item">
+                <h3>3. 🌀 인버티드 AeroPress 방식</h3>
+                <div class="recipe-details">
+                    <p>
+                        **준비**<br>
+                        원두 17 g, 물 250 g (50 g bloom + 200 g 메인), 폐기물 최소화;<br>
+                        분쇄도: 테이블 소금 정도<br><br>
+                        **단계 흐름**<br>
+                        0:00 — 뒤집은 상태에서 원두 넣고 50 g 물을 붓고 고르게 젖춤; 스터링 후 40초 블룸<br>
+                        0:40–1:00 — 나머지 200 g 천천히 붓고, 다시 젖죽이듯 저어줌.<br>
+                        1:00 — 필터 캡 조립, 1분 30초까지 더 기다림.<br>
+                        1:30 — 컵 위로 뒤집고 20–30초간 서서히 플런징 (‘쉬익’ 소리날 때까지).<br>
+                        두 단계 마무리 — 필요 시 뜨거운 물로 희석, 감압 방식 마감<br><br>
+                        **푸어 방식**<br>
+                        플런지가 아니라 블룸과 메인 붓기로 구성된 침지법.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
