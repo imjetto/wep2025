@@ -11,27 +11,32 @@
         <h1>☕ 카페 소개</h1>
         <nav>
             <ul>
-                <li><button onclick="location.href='teamproject.html'">홈으로 돌아가기</button></li>
+                <li><button class="page-move-btn" data-target="teamproject.html">홈으로 돌아가기</button></li>
             </ul>
         </nav>
     </header>
 
-    <main class="cafe-main-content"> <h2>✨ 엄선된 추천 카페</h2>
+    <main class="cafe-main-content">
+        <h2>✨ 엄선된 추천 카페</h2>
         <section class="cafe-overview-banners">
+            <!-- 알레그리아 배너 (button 태그로 변경) -->
             <button class="cafe-overview-item" data-cafe="allegria">
                 <img src="asset/allegria_thumbnail.jpg" alt="알레그리아 카페 미리보기 사진" class="overview-photo" onerror="this.onerror=null; this.src='https://placehold.co/300x200/8D6E63/FFFFFF?text=Allegria';">
                 <h3 class="overview-name">알레그리아</h3>
             </button>
+            <!-- 180커피로스터스 배너 (button 태그로 변경) -->
             <button class="cafe-overview-item" data-cafe="180coffee">
                 <img src="asset/180coffee_thumbnail.jpg" alt="180커피로스터스 카페 미리보기 사진" class="overview-photo" onerror="this.onerror=null; this.src='https://placehold.co/300x200/BCAAA4/FFFFFF?text=180+Coffee';">
                 <h3 class="overview-name">180커피로스터스</h3>
             </button>
+            <!-- 메쉬커피 배너 (button 태그로 변경) -->
             <button class="cafe-overview-item" data-cafe="meshcoffee">
                 <img src="asset/meshcoffee_thumbnail.jpg" alt="메쉬커피 카페 미리보기 사진" class="overview-photo" onerror="this.onerror=null; this.src='https://placehold.co/300x200/D7CCC8/FFFFFF?text=Mesh+Coffee';">
                 <h3 class="overview-name">메쉬커피</h3>
             </button>
         </section>
 
+        <!-- 상세 카페 정보 섹션 (기본적으로 숨겨짐) -->
         <section class="cafe-detail-section" id="allegria-detail">
             <h2 class="cafe-name">알레그리아 (Allegria)</h2>
             <div class="cafe-content">
