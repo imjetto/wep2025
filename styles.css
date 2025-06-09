@@ -1,212 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
-
-body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* --- teamproject.html 및 하위 페이지 공통 헤더 스타일 --- */
-header {
-    background-color: #5C3A21;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-nav button {
-    background-color: #7B5C40;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-nav button:hover {
-    background-color: #A08060;
-    transform: translateY(-2px);
-}
-
-/* --- teamproject.html 히어로 섹션 스타일 --- */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    color: white;
-}
-
-.hero img { /* 배경 이미지 */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(60%);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.hero-overlay { /* hero 섹션의 내용 컨테이너 */
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-}
-
-.hero-overlay h2 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.hero-overlay p {
-    font-size: 1.5rem;
-    max-width: 700px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    margin-bottom: 2rem;
-}
-
-.additional-hero-image { /* 히어로 섹션에 추가된 커피 아이콘 이미지 */
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.additional-hero-image:hover {
-    transform: scale(1.05);
-}
-
-#scrollBtn {
-    background-color: #E6B800;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.3rem;
-    margin-top: 2rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-weight: bold;
-}
-
-#scrollBtn:hover {
-    background-color: #FFD700;
-    transform: translateY(-3px);
-}
-
-/* --- teamproject.html 잡지식 코너 섹션 스타일 --- */
-#intro {
-    padding: 4rem 1rem;
-    background-color: white;
-    text-align: center;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#intro h2 {
-    font-size: 2.8rem;
-    color: #5C3A21;
-    margin-bottom: 3rem;
-}
-
-.banners {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.banner {
-    background-color: #F8F8F8;
-    border-radius: 12px;
-    padding: 2rem;
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    scroll-margin-top: 100px; /* 고정 헤더에 의해 가려지지 않도록 스크롤 마진 추가 */
-}
-
-.banner:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.banner button {
-    background-color: #8D6E63;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.banner button:hover {
-    background-color: #BCAAA4;
-    transform: translateY(-2px);
-}
-
-/* --- cafe.html 스타일 --- */
-.cafe-main-content {
+/* --- variable.html 스타일 추가 --- */
+.variable-main-content {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 1rem;
+    text-align: center;
 }
 
-.cafe-overview-banners {
+.variable-main-content h2 {
+    font-size: 2.5rem;
+    color: #5C3A21;
+    margin-bottom: 1.5rem;
+}
+
+.variable-intro {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.7;
+}
+
+.variable-overview-banners {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -214,13 +28,13 @@ nav button:hover {
     margin-bottom: 3rem;
 }
 
-.cafe-overview-item {
+.variable-overview-item {
     background-color: #F8F8F8;
     border-radius: 12px;
     padding: 1.5rem;
     flex: 1;
-    min-width: 280px;
-    max-width: 350px;
+    min-width: 250px; /* 최소 너비 조정 */
+    max-width: 300px; /* 최대 너비 조정 */
     text-align: center;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -230,26 +44,14 @@ nav button:hover {
     align-items: center;
 }
 
-.cafe-overview-item:hover {
+.variable-overview-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
-.overview-photo {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-}
+/* overview-photo와 overview-name은 cafe.html에서 재사용 */
 
-.overview-name {
-    font-size: 1.8rem;
-    color: #5C3A21;
-    margin: 0;
-}
-
-.cafe-detail-section {
+.variable-detail-section {
     display: none; /* 기본적으로 숨김 */
     background-color: white;
     border-radius: 12px;
@@ -259,34 +61,19 @@ nav button:hover {
     animation: fadeIn 0.5s ease-out; /* 부드럽게 나타나는 애니메이션 */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.cafe-detail-section.active {
+.variable-detail-section.active {
     display: block; /* 활성화 시 보임 */
 }
 
-/* .cafe-item은 cafe-detail-section 내의 컨텐츠 정렬용으로 사용 */
-.cafe-detail-section .cafe-item {
-    display: flex;
-    flex-direction: column; /* 기본은 세로 */
-    align-items: center;
-    text-align: center;
-    background-color: transparent; /* 배경색 제거 */
-    box-shadow: none; /* 그림자 제거 */
-    padding: 0; /* 패딩 제거 */
-}
-
-.cafe-name {
+.variable-name { /* cafe.html의 cafe-name과 유사하게 */
     font-size: 2.2rem;
     color: #5C3A21;
     margin-top: 0;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
-.cafe-content {
+.variable-content {
     display: flex;
     flex-direction: column; /* 모바일에서 세로로 정렬 */
     align-items: center;
@@ -294,7 +81,7 @@ nav button:hover {
     width: 100%;
 }
 
-.cafe-photo {
+.variable-photo { /* cafe.html의 cafe-photo와 유사하게 */
     width: 100%;
     max-width: 600px;
     height: auto;
@@ -303,310 +90,76 @@ nav button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.cafe-details {
+.variable-details {
     flex: 1;
     text-align: left;
     width: 100%;
-    max-width: 700px; /* 상세 설명 최대 너비 */
+    max-width: 700px;
 }
 
-.cafe-description {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-}
-
-.naver-map-link {
-    display: inline-block;
-    background-color: #03C75A;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.naver-map-link:hover {
-    background-color: #02a34b;
-    transform: translateY(-2px);
-}
-
-/* --- recipe.html 스타일 (가독성 개선) --- */
-.recipe-main-content {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-    text-align: center;
-}
-
-.recipe-main-content h2 {
-    font-size: 2.5rem;
-    color: #5C3A21;
-    margin-bottom: 2.5rem;
-}
-
-.recipe-grid-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    padding: 1rem; /* 그리드 컨테이너 자체의 내부 여백 */
-}
-
-.recipe-item {
-    background-color: white;
-    border-radius: 12px;
-    padding: 2rem; /* 내부 패딩을 늘려 콘텐츠 여백 확보 */
-    flex: 1;
-    min-width: 300px;
-    max-width: 380px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-}
-
-.recipe-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-.recipe-item h3 {
-    font-size: 1.8rem;
-    color: #5C3A21;
-    margin-top: 0;
-    margin-bottom: 1.2rem;
-    border-bottom: 2px solid #E6B800;
-    padding-bottom: 0.8rem;
-    text-align: center; /* 레시피 제목 중앙 정렬 */
-}
-
-.recipe-details {
-    padding: 0 1rem; /* 텍스트 좌우 여백 추가 */
-}
-
-.recipe-details p {
-    font-size: 1.05rem; /* 글자 크기 살짝 키움 */
-    color: #444; /* 텍스트 색상 좀 더 진하게 */
-    line-height: 1.9; /* 줄 간격 대폭 증가 */
-    margin-bottom: 1rem; /* 단락 아래 여백 */
+.variable-description {
+    font-size: 1.05rem; /* 글자 크기 조정 */
+    color: #444; /* 글자 색상 조정 */
+    line-height: 1.9; /* 줄 간격 조정 */
+    margin-bottom: 1rem;
     white-space: pre-wrap; /* 줄 바꿈 유지 */
+    padding: 0 0.5rem; /* 좌우 여백 추가 */
 }
 
-.recipe-details p strong { /* 볼드체 부분에 대한 스타일 */
-    color: #5C3A21; /* 핵심 키워드 색상 강조 */
-    font-weight: 700;
-    display: block; /* 줄 바꿈 */
-    margin-top: 1.2rem; /* 각 섹션 위 여백 */
-    margin-bottom: 0.5rem; /* 제목과 내용 사이 여백 */
-    font-size: 1.1rem; /* 제목보다 살짝 작게 */
-}
-
-
-/* --- index.html 시각적 개선을 위한 스타일 --- */
-.container {
-    max-width: 1200px;
-    width: 100%;
-    background-color: white;
-    padding: 2.5rem 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    text-align: center;
-    margin: 2rem auto;
-}
-
-.main-title {
-    font-size: 3.2rem;
-    color: #333;
-    margin-bottom: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -1px;
+.variable-description strong { /* 내용 내 강조 부분 스타일 */
     color: #5C3A21;
-}
-
-.link-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    justify-content: center;
-}
-
-.link-card {
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-decoration: none;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.link-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-    background-color: #f2f2f2;
-    border-color: #d0d0d0;
-}
-
-.link-card h3 {
-    font-size: 1.7rem;
-    margin-top: 0;
+    font-weight: 700;
+    display: block;
+    margin-top: 1.2rem;
     margin-bottom: 0.5rem;
-    color: #5C3A21;
-    font-weight: 700;
+    font-size: 1.1rem;
 }
 
-.link-card p {
-    font-size: 1rem;
-    color: #666;
-    margin: 0;
-}
 
-.primary-card {
-    background-color: #E6B800;
-    color: white;
-    box-shadow: 0 6px 15px rgba(230, 184, 0, 0.3);
-}
-
-.primary-card h3, .primary-card p {
-    color: white;
-}
-
-.primary-card:hover {
-    background-color: #FFD700;
-    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-}
-
-/* --- 반응형 디자인 (모든 페이지 공통) --- */
+/* --- 반응형 디자인 (variable.html 추가) --- */
 @media (min-width: 768px) {
-    /* cafe.html 상세 섹션 정렬 */
-    .cafe-detail-section .cafe-content {
+    .variable-detail-section .variable-content {
         flex-direction: row;
         text-align: left;
         align-items: flex-start;
     }
-    .cafe-detail-section .cafe-content:nth-child(even) {
+
+    .variable-detail-section .variable-content:nth-child(odd) { /* 홀수번째 항목은 이미지 왼쪽 */
+        flex-direction: row;
+    }
+    .variable-detail-section .variable-content:nth-child(even) { /* 짝수번째 항목은 이미지 오른쪽 */
         flex-direction: row-reverse;
     }
-    .cafe-detail-section .cafe-photo {
+
+    .variable-detail-section .variable-photo {
         width: 40%;
         max-width: none;
     }
-    .cafe-detail-section .cafe-details {
+    .variable-detail-section .variable-details {
         width: 60%;
     }
 }
 
 @media (max-width: 768px) {
-    /* teamproject.html 및 하위 페이지 헤더/네비게이션 */
-    header h1 {
-        font-size: 2rem;
-    }
-    nav ul {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-    nav button {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    /* teamproject.html 히어로 섹션 */
-    .hero {
-        height: 400px;
-    }
-    .hero-overlay h2 {
-        font-size: 2.5rem;
-    }
-    .hero-overlay p {
-        font-size: 1.2rem;
-        padding: 0 1rem;
-    }
-    .additional-hero-image {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 1.5rem;
-    }
-
-    /* teamproject.html 잡지식 코너 */
-    #intro h2 {
-        font-size: 2.2rem;
-    }
-    .banners {
-        flex-direction: column;
-        align-items: center;
-    }
-    .banner {
-        width: 90%;
-        max-width: 400px;
-        padding: 1.5rem;
-    }
-
-    /* cafe.html 모바일 스타일 */
-    .cafe-overview-item {
+    .variable-overview-item {
         width: 90%;
         max-width: 400px;
         padding: 1rem;
     }
-    .overview-photo {
+    .variable-overview-item .overview-photo {
         height: 150px;
     }
-    .overview-name {
+    .variable-overview-item .overview-name {
         font-size: 1.5rem;
     }
-    .cafe-detail-section {
+
+    .variable-detail-section {
         padding: 1.5rem;
     }
-    .cafe-name {
+    .variable-name {
         font-size: 1.8rem;
     }
-    .cafe-description {
+    .variable-description {
         font-size: 1rem;
-    }
-
-    /* recipe.html 모바일 스타일 */
-    .recipe-grid-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .recipe-item {
-        width: 90%;
-        max-width: 450px;
-    }
-    .recipe-main-content h2 {
-        font-size: 2rem;
-    }
-    .recipe-item h3 {
-        font-size: 1.6rem;
-    }
-
-    /* index.html 모바일 스타일 */
-    .container {
-        padding: 1.5rem;
-    }
-    .main-title {
-        font-size: 2.5rem;
-    }
-    .link-grid {
-        grid-template-columns: 1fr;
-    }
-    .link-card {
-        padding: 1.2rem;
-    }
-    .link-card h3 {
-        font-size: 1.5rem;
-    }
-    .link-card p {
-        font-size: 0.9rem;
     }
 }
