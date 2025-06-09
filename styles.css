@@ -104,7 +104,6 @@ main h2 {
     flex-direction: column;
     text-align: center;
     color: white;
-    /* HTML의 img 태그를 제거하고 배경 이미지로 처리 */
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('asset/coffee.jpg') no-repeat center center/cover;
     border-radius: 12px;
     box-shadow: var(--shadow-medium);
@@ -285,7 +284,6 @@ main h2 {
 
 /* --- cafe.html 스타일 --- */
 .cafe-main-content {
-    /* main 태그에 적용되는 스타일이 있으므로 여기서는 padding, margin만 조정 */
     padding: 2rem;
     text-align: center;
 }
@@ -298,7 +296,6 @@ main h2 {
     margin-bottom: 3rem;
 }
 
-/* cafe-overview-item을 button 태그로 변경했으므로, button에 직접 스타일 적용 */
 .cafe-overview-item { /* 기존 div에서 button으로 변경 */
     background-color: var(--bg-light);
     border: 1px solid var(--border-color);
@@ -398,7 +395,7 @@ main h2 {
 
 .cafe-details {
     flex: 1;
-    text-align: left;
+    text-align: left; /* 전체 영역 왼쪽 정렬 */
     width: 100%;
     max-width: 700px;
 }
@@ -409,7 +406,18 @@ main h2 {
     line-height: 1.8;
     margin-bottom: 1.5rem;
     white-space: pre-wrap; /* HTML의 줄바꿈 적용 */
-    text-align: justify;
+    text-align: left; /* 명시적으로 왼쪽 정렬 */
+    padding: 0 0.5rem; /* 좌우 패딩으로 내용이 너무 붙지 않게 */
+}
+
+.cafe-description strong {
+    color: var(--primary-color);
+    font-weight: 700;
+    display: block;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    text-align: left; /* strong 태그도 왼쪽 정렬 */
 }
 
 .naver-map-link {
@@ -498,7 +506,7 @@ main h2 {
 }
 
 .recipe-details {
-    padding: 0 0.5rem;
+    padding: 0 0.5rem; /* 좌우 패딩을 0.5rem으로 유지하여 너무 끝에 붙지 않도록 */
 }
 
 .recipe-details p {
@@ -506,8 +514,8 @@ main h2 {
     color: var(--text-light);
     line-height: 1.9;
     margin-bottom: 1rem;
-    white-space: pre-wrap;
-    text-align: left;
+    white-space: pre-wrap; /* HTML의 줄바꿈 적용 */
+    text-align: left; /* 명시적으로 왼쪽 정렬 */
 }
 
 .recipe-details p strong {
@@ -517,6 +525,7 @@ main h2 {
     margin-top: 1.2rem;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
+    text-align: left; /* strong 태그도 왼쪽 정렬 */
 }
 
 /* --- variable.html 스타일 --- */
@@ -537,6 +546,8 @@ main h2 {
     max-width: 900px;
     margin: 0 auto 3rem auto;
     line-height: 1.7;
+    text-align: left; /* 추가: intro 텍스트도 왼쪽 정렬 */
+    padding: 0 0.5rem; /* 좌우 패딩 추가 */
 }
 
 .variable-overview-banners {
@@ -631,7 +642,7 @@ main h2 {
 
 .variable-details {
     flex: 1;
-    text-align: left;
+    text-align: left; /* 전체 영역 왼쪽 정렬 */
     width: 100%;
     max-width: 700px;
 }
@@ -642,7 +653,8 @@ main h2 {
     line-height: 1.9;
     margin-bottom: 1rem;
     white-space: pre-wrap;
-    padding: 0 0.5rem;
+    text-align: left; /* 명시적으로 왼쪽 정렬 */
+    padding: 0 0.5rem; /* 좌우 패딩 추가 */
 }
 
 .variable-description strong {
@@ -652,6 +664,7 @@ main h2 {
     margin-top: 1.2rem;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
+    text-align: left; /* strong 태그도 왼쪽 정렬 */
 }
 
 /* 푸터 스타일 */
@@ -814,6 +827,9 @@ footer {
         width: 100%;
         max-width: none;
     }
+    .cafe-details {
+        padding: 0; /* 모바일에서 좌우 패딩 제거 */
+    }
     .naver-map-link {
         font-size: 0.95rem;
         padding: 0.7rem 1.2rem;
@@ -844,6 +860,7 @@ footer {
     }
     .recipe-details p strong {
         font-size: 1.05rem;
+        text-align: left; /* 모바일에서도 왼쪽 정렬 */
     }
 
     /* variable.html 모바일 스타일 */
@@ -871,71 +888,10 @@ footer {
     }
     .variable-description {
         font-size: 1rem;
-        padding: 0;
+        padding: 0; /* 모바일에서 좌우 패딩 제거 */
     }
     .variable-description strong {
         font-size: 1.05rem;
-    }
-}
-
-@media (max-width: 480px) { /* 더 작은 모바일 기기 */
-    header h1 {
-        font-size: 1.8rem;
-    }
-    .page-move-btn {
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
-    }
-
-    .hero {
-        height: 350px;
-    }
-    .hero-overlay h2 {
-        font-size: 2rem;
-    }
-    .hero-overlay p {
-        font-size: 0.9rem;
-    }
-    .additional-hero-image {
-        width: 80px;
-        height: 80px;
-    }
-    #scrollBtn {
-        font-size: 1rem;
-        padding: 0.7rem 1.3rem;
-    }
-
-    #intro h2 {
-        font-size: 1.8rem;
-    }
-    .intro-description {
-        font-size: 0.9rem;
-    }
-    .banner button {
-        font-size: 1rem;
-        padding: 0.7rem 1.3rem;
-    }
-
-    .project-info h3 {
-        font-size: 1.5rem;
-    }
-    .project-info p {
-        font-size: 0.85rem;
-    }
-
-    .cafe-name {
-        font-size: 1.6rem;
-    }
-    .overview-photo {
-        height: 120px;
-    }
-    .recipe-item h3 {
-        font-size: 1.4rem;
-    }
-    .recipe-thumbnail {
-        height: 150px;
-    }
-    .variable-name {
-        font-size: 1.6rem;
+        text-align: left; /* 모바일에서도 왼쪽 정렬 */
     }
 }
