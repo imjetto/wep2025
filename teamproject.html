@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>에스프레소의 모든 것</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>에스프레소의 모든 것</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>☕ 에스프레소 연구소</h1>
-    <nav>
-      <ul>
-        <li><button class="page-move-btn nav-button" data-target="cafe.html">카페소개</button></li>
-        <li><button class="page-move-btn nav-button" data-target="recipe.html">추출레시피</button></li>
-        <li><button class="page-move-btn nav-button" data-target="variable.html">추출변수</button></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>☕ 에스프레소 연구소</h1>
+        <nav>
+            <ul>
+                <li><button id="nav-cafe-btn">카페소개</button></li>
+                <li><button id="nav-recipe-btn">추출레시피</button></li>
+                <li><button id="nav-variable-btn">추출변수</button></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <section class="hero">
-      <img src="asset/main_cafe_bg.jpg" alt="따뜻한 김이 피어오르는 커피 한 잔" />
-      <div class="hero-overlay">
-        <h2>커피의 모든 것</h2>
-        <p>알고 싶었던 커피 상식과 레시피를 한곳에서 만나보세요.</p>
-        <button id="scrollBtn" class="cta-button">더 알아보기</button>
-      </div>
-    </section>
+    <main>
+        <section class="hero">
+            <img src="asset/coffee.jpg" alt="따뜻한 김이 피어오르는 커피 한 잔과 원두가 놓인 배경 이미지" />
+            <div class="hero-overlay">
+                <h2>커피의 모든 것</h2>
+                <p>알고 싶었던 커피 상식과 레시피를 한곳에서 만나보세요.</p>
+                <img src="https://placehold.co/200x200/8D6E63/FFFFFF?text=Coffee+Icon" alt="갈색 커피잔 모양의 아이콘" class="additional-hero-image">
+                <button id="scrollBtn">더 알아보기</button>
+            </div>
+        </section>
 
-    <section id="intro">
-      <h2>잡지식 코너</h2>
-      <div class="main-sections">
-        <div class="section-item page-move-btn" data-target="cafe.html">
-          <img src="asset/allegria_thumbnail.jpg" alt="알레그리아 카페" />
-          <h3>카페소개</h3>
-        </div>
-        <div class="section-item page-move-btn" data-target="recipe.html">
-          <img src="asset/recipe_4-6_method.jpg" alt="4:6 메소드" />
-          <h3>추출레시피</h3>
-        </div>
-        <div class="section-item page-move-btn" data-target="variable.html">
-          <img src="asset/dose_thumbnail.jpg" alt="커피량 변수" />
-          <h3>추출변수</h3>
-        </div>
-      </div>
-    </section>
-  </main>
+        <section id="intro">
+            <h2>잡지식 코너</h2>
+            <p class="intro-description">커피에 대한 흥미로운 잡지식을 여기서 만나보세요!</p>
+            <div class="banners">
+                <div class="banner" id="cafe-banner-intro"> <button id="intro-cafe-btn">카페소개</button>
+                </div>
+                <div class="banner" id="recipe-banner-intro"> <button id="intro-recipe-btn">추출레시피</button>
+                </div>
+                <div class="banner" id="variable-banner-intro"> <button id="intro-variable-btn">추출변수</button>
+                </div>
+            </div>
+        </section>
 
-  <footer>
-    <p>&copy; 2025 에스프레소 연구소. 모든 권리 보유.</p>
-  </footer>
+        <section class="project-info">
+            <h3>프로젝트 소개</h3>
+            <p>이 웹사이트는 커피, 특히 에스프레소에 대한 깊이 있는 정보를 제공하여, 커피를 사랑하는 모든 분들이 더 풍부한 커피 경험을 할 수 있도록 돕습니다.</p>
+            <p>카페 소개를 통해 다양한 카페를 탐색하고, 추출 레시피로 나만의 완벽한 커피를 만들어 보세요. 에스프레소 추출의 핵심 변수를 이해하여 전문가처럼 커피를 즐길 수도 있습니다.</p>
+        </section>
+    </main>
 
-  <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2025 에스프레소 연구소. 모든 권리 보유.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
