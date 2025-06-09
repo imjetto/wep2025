@@ -1,60 +1,98 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+/* 기본 설정 및 공통 스타일 */
+:root {
+    --primary-color: #5C3A21; /* 진한 커피 브라운 (기본 강조 색상) */
+    --secondary-color: #A08060; /* 부드러운 브라운 (보조 색상) */
+    --accent-color: #E6B800; /* 골드 (강조 포인트 색상) */
+    --text-dark: #333;
+    --text-light: #555;
+    --bg-light: #f4f4f4;
+    --bg-white: #fff;
+    --border-color: #ddd;
+    --shadow-light: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow-medium: 0 4px 10px rgba(0,0,0,0.15);
+    --shadow-strong: 0 8px 20px rgba(0,0,0,0.2);
+}
 
-body {
-    font-family: 'Inter', sans-serif;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
 }
 
-/* --- teamproject.html 및 하위 페이지 공통 헤더 스타일 --- */
+body {
+    font-family: 'Inter', sans-serif; /* Inter 폰트 사용 */
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 뷰포트 높이 최소값 */
+}
+
+/* 헤더 스타일 */
 header {
-    background-color: #5C3A21; /* 다크 브라운 */
+    background-color: var(--primary-color);
     color: white;
     padding: 1rem 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-light);
     position: sticky; /* 스크롤 시 상단에 고정 */
     top: 0;
-    z-index: 1000; /* 다른 요소 위에 오도록 */
+    z-index: 1000;
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
-    letter-spacing: 2px; /* 글자 간격 추가 */
+    letter-spacing: 2px;
 }
 
-nav ul {
+header nav ul {
     list-style: none;
     padding: 0;
-    margin: 1rem 0 0 0; /* 상단 여백 추가 */
+    margin: 1rem 0 0 0;
     display: flex;
     justify-content: center;
-    gap: 1.5rem; /* 버튼 사이 간격 */
+    gap: 1.5rem;
 }
 
-nav button {
-    background-color: #7B5C40; /* 미디엄 브라운 */
+/* 모든 페이지 이동 버튼에 적용될 기본 스타일 */
+.page-move-btn {
+    background-color: var(--secondary-color);
     color: white;
-    border: none;
     padding: 0.8rem 1.5rem;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1.1rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-nav button:hover {
-    background-color: #A08060; /* 밝은 브라운 */
+.page-move-btn:hover {
+    background-color: #BCAAA4; /* secondary-color의 밝은 버전 */
     transform: translateY(-2px);
 }
 
-/* --- teamproject.html 히어로 섹션 스타일 --- */
+/* 메인 콘텐츠 공통 스타일 */
+main {
+    flex: 1; /* 푸터를 하단에 고정 */
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background-color: var(--bg-white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+}
+
+main h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* --- teamproject.html (홈 페이지) 스타일 --- */
 .hero {
     position: relative;
     width: 100%;
@@ -63,24 +101,17 @@ nav button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* 세로 정렬 */
+    flex-direction: column;
     text-align: center;
     color: white;
-}
-
-.hero img { /* 배경 이미지 */
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(60%); /* 이미지 밝기 조절 */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1; /* 내용을 가리지 않도록 */
+    /* HTML의 img 태그를 제거하고 배경 이미지로 처리 */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('asset/coffee.jpg') no-repeat center center/cover;
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
 }
 
 .hero-overlay { /* hero 섹션의 내용 컨테이너 */
-    position: relative;
+    position: relative; /* z-index를 위한 relative */
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -94,13 +125,14 @@ nav button:hover {
 .hero-overlay h2 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: white; /* 덮어쓰기 */
 }
 
 .hero-overlay p {
     font-size: 1.5rem;
     max-width: 700px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     margin-bottom: 2rem;
 }
 
@@ -110,16 +142,16 @@ nav button:hover {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: transform 0.3s ease;
 }
 
 .additional-hero-image:hover {
-    transform: scale(1.05); /* 호버 시 확대 */
+    transform: scale(1.05);
 }
 
 #scrollBtn {
-    background-color: #E6B800; /* 골드 색상 */
+    background-color: var(--accent-color); /* 골드 색상 */
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -128,36 +160,35 @@ nav button:hover {
     font-size: 1.3rem;
     margin-top: 2rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     font-weight: bold;
 }
 
 #scrollBtn:hover {
     background-color: #FFD700; /* 밝은 골드 */
-    transform: translateY(-3px); /* 호버 시 위로 살짝 이동 */
+    transform: translateY(-3px);
 }
 
-/* --- teamproject.html 잡지식 코너 섹션 스타일 --- */
+/* 잡지식 코너 섹션 스타일 */
 #intro {
     padding: 4rem 1rem;
-    background-color: white;
+    background-color: var(--bg-white);
     text-align: center;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 상단 그림자 */
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
 
 #intro h2 {
     font-size: 2.8rem;
-    color: #5C3A21;
-    margin-bottom: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
 }
 
-.intro-description { /* 추가된 설명 문구 스타일 */
+.intro-description {
     font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 3rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    color: var(--text-light);
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.7;
 }
 
 .banners {
@@ -170,43 +201,43 @@ nav button:hover {
 }
 
 .banner {
-    background-color: #F8F8F8;
+    background-color: var(--bg-light);
     border-radius: 12px;
     padding: 2rem;
     flex: 1;
     min-width: 280px;
     max-width: 350px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    scroll-margin-top: 100px; /* 고정 헤더에 의해 가려지지 않도록 스크롤 마진 추가 */
-    /* 배경 이미지 추가 (HTML에서 ID 부여 후 JS로 연결할 때 사용) */
+    scroll-margin-top: 100px; /* 고정 헤더에 의해 가려지지 않도록 */
+    /* 배너별 배경 이미지 (CSS로 설정) */
     background-size: cover;
     background-position: center;
-    color: white; /* 버튼이 아닌 배경 이미지 위에 텍스트가 있을 경우 대비 */
+    color: white; /* 텍스트가 배경 이미지 위에 있을 경우 */
 }
 
-/* 개별 배너 배경 이미지 (teamproject.html의 banner ID와 맞춰서 사용) */
+/* 각 배너의 배경 이미지 */
 #cafe-banner-intro {
-    background-image: url('https://placehold.co/350x200/BCAAA4/FFFFFF?text=Cafe');
+    background-image: url('https://placehold.co/350x200/BCAAA4/FFFFFF?text=Cafe+Intro');
 }
 #recipe-banner-intro {
-    background-image: url('https://placehold.co/350x200/D7CCC8/FFFFFF?text=Recipe');
+    background-image: url('https://placehold.co/350x200/D7CCC8/FFFFFF?text=Recipe+Intro');
 }
 #variable-banner-intro {
-    background-image: url('https://placehold.co/350x200/EFEBE9/FFFFFF?text=Variable');
+    background-image: url('https://placehold.co/350x200/EFEBE9/FFFFFF?text=Variable+Intro');
 }
 
 
 .banner:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-.banner button {
+.banner button { /* 배너 내부 버튼 스타일 (page-move-btn 기본 스타일 오버라이드) */
     background-color: rgba(0, 0, 0, 0.6); /* 투명도 있는 배경 */
     color: white;
     border: none;
@@ -216,57 +247,46 @@ nav button:hover {
     font-size: 1.2rem;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .banner button:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* 호버 시 불투명하게 */
+    background-color: rgba(0, 0, 0, 0.8);
     transform: translateY(-2px);
 }
 
-/* 추가된 프로젝트 소개 섹션 스타일 */
+/* 프로젝트 소개 섹션 */
 .project-info {
-    max-width: 1000px;
-    margin: 4rem auto 2rem auto;
     padding: 3rem;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
+    margin-top: 4rem;
+    border-radius: 12px;
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-medium);
 }
 
 .project-info h3 {
     font-size: 2.2rem;
-    color: #5C3A21;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid #E6B800;
+    border-bottom: 2px solid var(--accent-color);
     padding-bottom: 0.8rem;
-    display: inline-block; /* 내용 길이에 맞춰서 밑줄 표시 */
+    display: inline-block;
 }
 
 .project-info p {
     font-size: 1.05rem;
-    color: #555;
+    color: var(--text-light);
     line-height: 1.8;
     margin-bottom: 1rem;
-    text-align: justify; /* 양쪽 정렬 */
+    text-align: justify;
 }
 
 
 /* --- cafe.html 스타일 --- */
 .cafe-main-content {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: white; /* 메인 콘텐츠 배경색 */
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.cafe-main-content h2 {
-    font-size: 2.5rem;
-    color: #5C3A21;
-    margin-bottom: 2.5rem;
+    /* main 태그에 적용되는 스타일이 있으므로 여기서는 padding, margin만 조정 */
+    padding: 2rem;
     text-align: center;
 }
 
@@ -278,16 +298,18 @@ nav button:hover {
     margin-bottom: 3rem;
 }
 
-.cafe-overview-item {
-    background-color: #F8F8F8;
+/* cafe-overview-item을 button 태그로 변경했으므로, button에 직접 스타일 적용 */
+.cafe-overview-item { /* 기존 div에서 button으로 변경 */
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 1.5rem;
     flex: 1;
     min-width: 280px;
     max-width: 350px;
     text-align: center;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -296,8 +318,23 @@ nav button:hover {
 
 .cafe-overview-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-medium);
+    background-color: var(--secondary-color);
+    color: white;
 }
+
+.cafe-overview-item.selected { /* JavaScript에서 추가할 클래스 */
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-strong);
+    transform: translateY(-5px);
+}
+
+.cafe-overview-item:hover .overview-name,
+.cafe-overview-item.selected .overview-name {
+    color: white; /* 선택/호버 시 글자색 변경 */
+}
+
 
 .overview-photo { /* cafe.html과 variable.html에서 재사용 */
     width: 100%;
@@ -305,17 +342,19 @@ nav button:hover {
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 1rem;
+    box-shadow: var(--shadow-light);
 }
 
 .overview-name { /* cafe.html과 variable.html에서 재사용 */
     font-size: 1.8rem;
-    color: #5C3A21;
+    color: var(--primary-color);
     margin: 0;
+    transition: color 0.3s ease;
 }
 
 .cafe-detail-section {
     display: none; /* 기본적으로 숨김 */
-    background-color: white;
+    background-color: var(--bg-white);
     border-radius: 12px;
     padding: 2.5rem;
     margin-bottom: 2rem;
@@ -332,20 +371,9 @@ nav button:hover {
     display: block; /* 활성화 시 보임 */
 }
 
-/* .cafe-item은 cafe-detail-section 내의 컨텐츠 정렬용으로 사용 */
-.cafe-detail-section .cafe-item {
-    display: flex;
-    flex-direction: column; /* 기본은 세로 */
-    align-items: center;
-    text-align: center;
-    background-color: transparent; /* 배경색 제거 */
-    box-shadow: none; /* 그림자 제거 */
-    padding: 0; /* 패딩 제거 */
-}
-
 .cafe-name {
     font-size: 2.2rem;
-    color: #5C3A21;
+    color: var(--primary-color);
     margin-top: 0;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -365,23 +393,23 @@ nav button:hover {
     height: auto;
     border-radius: 8px;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
 }
 
 .cafe-details {
     flex: 1;
     text-align: left;
     width: 100%;
-    max-width: 700px; /* 상세 설명 최대 너비 */
+    max-width: 700px;
 }
 
 .cafe-description {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--text-light);
     line-height: 1.8;
     margin-bottom: 1.5rem;
     white-space: pre-wrap; /* HTML의 줄바꿈 적용 */
-    text-align: justify; /* 양쪽 정렬 */
+    text-align: justify;
 }
 
 .naver-map-link {
@@ -393,7 +421,7 @@ nav button:hover {
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .naver-map-link:hover {
@@ -403,18 +431,13 @@ nav button:hover {
 
 /* --- recipe.html 스타일 --- */
 .recipe-main-content {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: white; /* 메인 콘텐츠 배경색 */
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
     text-align: center;
 }
 
 .recipe-main-content h2 {
     font-size: 2.5rem;
-    color: #5C3A21;
+    color: var(--primary-color);
     margin-bottom: 2.5rem;
 }
 
@@ -427,13 +450,13 @@ nav button:hover {
 }
 
 .recipe-item {
-    background-color: white;
+    background-color: var(--bg-white);
     border-radius: 12px;
     padding: 2rem;
     flex: 1;
     min-width: 300px;
     max-width: 380px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
     display: flex;
@@ -442,36 +465,55 @@ nav button:hover {
 
 .recipe-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .recipe-item h3 {
     font-size: 1.8rem;
-    color: #5C3A21;
+    color: var(--primary-color);
     margin-top: 0;
     margin-bottom: 1.2rem;
-    border-bottom: 2px solid #E6B800; /* 밑줄 */
+    border-bottom: 2px solid var(--accent-color);
     padding-bottom: 0.8rem;
-    text-align: center; /* 레시피 제목 중앙 정렬 */
+    text-align: center;
+    display: flex; /* 번호와 아이콘 정렬을 위해 추가 */
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+}
+
+.recipe-item h3 .recipe-number { /* 레시피 번호 스타일 */
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.recipe-thumbnail { /* 추가된 레시피 이미지 스타일 */
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-light);
 }
 
 .recipe-details {
-    padding: 0 1rem; /* 좌우 패딩 추가 */
+    padding: 0 0.5rem;
 }
 
 .recipe-details p {
     font-size: 1.05rem;
-    color: #444;
+    color: var(--text-light);
     line-height: 1.9;
     margin-bottom: 1rem;
-    white-space: pre-wrap; /* HTML의 줄바꿈 적용 */
-    text-align: left; /* 텍스트 왼쪽 정렬 */
+    white-space: pre-wrap;
+    text-align: left;
 }
 
 .recipe-details p strong {
-    color: #5C3A21;
+    color: var(--primary-color);
     font-weight: 700;
-    display: block; /* 블록 요소로 만들어 줄바꿈 */
+    display: block;
     margin-top: 1.2rem;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
@@ -479,24 +521,19 @@ nav button:hover {
 
 /* --- variable.html 스타일 --- */
 .variable-main-content {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: white; /* 메인 콘텐츠 배경색 */
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
     text-align: center;
 }
 
 .variable-main-content h2 {
     font-size: 2.5rem;
-    color: #5C3A21;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
 }
 
 .variable-intro {
     font-size: 1.1rem;
-    color: #555;
+    color: var(--text-light);
     max-width: 900px;
     margin: 0 auto 3rem auto;
     line-height: 1.7;
@@ -511,15 +548,15 @@ nav button:hover {
 }
 
 .variable-overview-item {
-    background-color: #F8F8F8;
+    background-color: var(--bg-light);
     border-radius: 12px;
     padding: 1.5rem;
     flex: 1;
     min-width: 250px;
     max-width: 300px;
     text-align: center;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -528,21 +565,33 @@ nav button:hover {
 
 .variable-overview-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-medium);
+    background-color: var(--secondary-color);
+    color: white;
 }
 
-/* overview-photo와 overview-name은 cafe.html에서 재사용되므로 주석 처리된 부분은 제거 */
-/* .overview-photo { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem; } */
-/* .overview-name { font-size: 1.8rem; color: #5C3A21; margin: 0; } */
+.variable-overview-item.selected { /* JavaScript에서 추가할 클래스 */
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow-strong);
+    transform: translateY(-5px);
+}
 
+.variable-overview-item:hover .overview-name,
+.variable-overview-item.selected .overview-name {
+    color: white; /* 선택/호버 시 글자색 변경 */
+}
+
+
+/* overview-photo와 overview-name은 cafe.html에서 이미 정의됨 */
 
 .variable-detail-section {
     display: none; /* 기본적으로 숨김 */
-    background-color: white;
+    background-color: var(--bg-white);
     border-radius: 12px;
     padding: 2.5rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     animation: fadeIn 0.5s ease-out; /* 부드럽게 나타나는 애니메이션 */
 }
 
@@ -557,7 +606,7 @@ nav button:hover {
 
 .variable-name {
     font-size: 2.2rem;
-    color: #5C3A21;
+    color: var(--primary-color);
     margin-top: 0;
     margin-bottom: 1.5rem;
     text-align: center;
@@ -577,7 +626,7 @@ nav button:hover {
     height: auto;
     border-radius: 8px;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-light);
 }
 
 .variable-details {
@@ -589,114 +638,36 @@ nav button:hover {
 
 .variable-description {
     font-size: 1.05rem;
-    color: #444;
+    color: var(--text-light);
     line-height: 1.9;
     margin-bottom: 1rem;
-    white-space: pre-wrap; /* HTML의 줄바꿈 적용 */
+    white-space: pre-wrap;
     padding: 0 0.5rem;
 }
 
 .variable-description strong {
-    color: #5C3A21;
+    color: var(--primary-color);
     font-weight: 700;
-    display: block; /* 블록 요소로 만들어 줄바꿈 */
+    display: block;
     margin-top: 1.2rem;
     margin-bottom: 0.5rem;
     font-size: 1.1rem;
 }
 
-
-/* --- index.html 시각적 개선을 위한 스타일 --- */
-/* index.html은 별도로 존재하지 않는 것으로 보이며, teamproject.html이 메인 페이지 역할을 합니다. */
-/* 따라서 아래 스타일은 teamproject.html의 메인 콘텐츠(main 태그)에 적용되는 공통적인 스타일로 간주합니다. */
-main { /* main 태그에 일반적인 콘텐츠 컨테이너 스타일 적용 */
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* main 태그에 text-align: center를 넣으면 내부 모든 텍스트에 적용되므로, */
-    /* 필요한 경우 개별 섹션에서 재정의하는 것이 좋습니다. */
-}
-
-.main-title { /* teamproject.html의 H2 스타일에 적용될 수 있습니다. */
-    font-size: 3.2rem;
-    color: #333;
-    margin-bottom: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -1px;
-    color: #5C3A21;
-    text-align: center; /* 중앙 정렬 명시 */
-}
-
-/* .link-grid, .link-card, .primary-card 등은 현재 teamproject.html 구조와 맞지 않습니다. */
-/* teamproject.html의 .banners와 .banner 스타일을 이미 충분히 잘 정의하셨습니다. */
-/* 따라서 아래 주석 처리된 부분들은 현재 프로젝트 구조에서는 사용되지 않을 것으로 보입니다. */
-/*
-.link-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    justify-content: center;
-}
-
-.link-card {
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 1.5rem;
-    text-decoration: none;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* 푸터 스타일 */
+footer {
     text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.link-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
-    background-color: #f2f2f2;
-    border-color: #d0d0d0;
-}
-
-.link-card h3 {
-    font-size: 1.7rem;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    color: #5C3A21;
-    font-weight: 700;
-}
-
-.link-card p {
-    font-size: 1rem;
-    color: #666;
-    margin: 0;
-}
-
-.primary-card {
-    background-color: #E6B800;
+    padding: 1.5rem;
+    background-color: var(--primary-color);
     color: white;
-    box-shadow: 0 6px 15px rgba(230, 184, 0, 0.3);
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }
-
-.primary-card h3, .primary-card p {
-    color: white;
-}
-
-.primary-card:hover {
-    background-color: #FFD700;
-    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
-}
-*/
 
 /* --- 반응형 디자인 (모든 페이지 공통) --- */
-@media (min-width: 769px) { /* 768px 초과 시 데스크톱 스타일 */
-    /* cafe.html 상세 섹션 정렬 */
+@media (min-width: 769px) { /* 769px 이상 데스크톱 스타일 */
+    /* cafe.html 및 variable.html 상세 섹션 정렬 */
     .cafe-detail-section .cafe-content,
     .variable-detail-section .variable-content {
         flex-direction: row;
@@ -704,20 +675,20 @@ main { /* main 태그에 일반적인 콘텐츠 컨테이너 스타일 적용 */
         align-items: flex-start;
     }
     /* 짝수 번째 섹션 이미지/텍스트 순서 변경 */
-    .cafe-detail-section:nth-of-type(even) .cafe-content, /* nth-child 대신 nth-of-type을 사용하여 section에만 적용 */
+    .cafe-detail-section:nth-of-type(even) .cafe-content,
     .variable-detail-section:nth-of-type(even) .variable-content {
         flex-direction: row-reverse;
     }
     .cafe-detail-section .cafe-photo,
     .variable-detail-section .variable-photo {
         width: 40%;
-        max-width: none; /* max-width 초기화 */
+        max-width: none;
     }
     .cafe-detail-section .cafe-details,
     .variable-detail-section .variable-details {
         width: 60%;
-        padding-left: 1.5rem; /* 텍스트 왼쪽 여백 추가 */
-        padding-right: 0; /* 오른쪽 여백 초기화 */
+        padding-left: 1.5rem;
+        padding-right: 0;
     }
     /* 이미지 반대편 정렬 시 마진 조정 */
     .cafe-detail-section:nth-of-type(even) .cafe-photo,
@@ -727,36 +698,47 @@ main { /* main 태그에 일반적인 콘텐츠 컨테이너 스타일 적용 */
     }
     .cafe-detail-section:nth-of-type(even) .cafe-details,
     .variable-detail-section:nth-of-type(even) .variable-details {
-        padding-right: 1.5rem; /* 텍스트 오른쪽 여백 추가 */
-        padding-left: 0; /* 왼쪽 여백 초기화 */
+        padding-right: 1.5rem;
+        padding-left: 0;
     }
 }
 
 
 @media (max-width: 768px) { /* 768px 이하 모바일 스타일 */
-    /* teamproject.html 및 하위 페이지 헤더/네비게이션 */
     header h1 {
         font-size: 2rem;
     }
-    nav ul {
+    header nav ul {
         flex-direction: column;
         gap: 0.8rem;
     }
-    nav button {
+    .page-move-btn { /* 네비게이션 버튼 */
         width: 80%;
         margin: 0 auto;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+    }
+    main h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
 
     /* teamproject.html 히어로 섹션 */
     .hero {
         height: 400px;
+        padding: 2rem 1rem;
     }
     .hero-overlay h2 {
         font-size: 2.5rem;
     }
     .hero-overlay p {
         font-size: 1.2rem;
-        padding: 0 1rem;
+        padding: 0 0.5rem;
     }
     .additional-hero-image {
         width: 100px;
@@ -789,8 +771,7 @@ main { /* main 태그에 일반적인 콘텐츠 컨테이너 스타일 적용 */
         padding: 0.8rem 1.5rem;
         font-size: 1.1rem;
     }
-    
-    /* 추가된 프로젝트 소개 섹션 */
+    /* 프로젝트 소개 섹션 */
     .project-info {
         padding: 1.5rem;
         margin: 2rem auto;
@@ -803,8 +784,10 @@ main { /* main 태그에 일반적인 콘텐츠 컨테이너 스타일 적용 */
     }
 
     /* cafe.html 모바일 스타일 */
-    .cafe-main-content h2 {
-        font-size: 2rem;
+    .cafe-overview-banners {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
     }
     .cafe-overview-item {
         width: 90%;
@@ -823,30 +806,38 @@ main { /* main 태그에 일반적인 콘텐츠 컨테이너 스타일 적용 */
     .cafe-name {
         font-size: 1.8rem;
     }
-    .cafe-description {
-        font-size: 1rem;
+    .cafe-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cafe-photo {
+        width: 100%;
+        max-width: none;
     }
     .naver-map-link {
-        padding: 0.6rem 1.2rem;
         font-size: 0.95rem;
+        padding: 0.7rem 1.2rem;
     }
-
 
     /* recipe.html 모바일 스타일 */
     .recipe-grid-container {
         flex-direction: column;
         align-items: center;
+        gap: 1.5rem;
     }
     .recipe-item {
         width: 90%;
         max-width: 450px;
         padding: 1.5rem;
     }
-    .recipe-main-content h2 {
-        font-size: 2rem;
-    }
     .recipe-item h3 {
         font-size: 1.6rem;
+    }
+    .recipe-item h3 .recipe-number {
+        font-size: 1.3rem;
+    }
+    .recipe-thumbnail {
+        height: 200px;
     }
     .recipe-details p {
         font-size: 1rem;
@@ -856,12 +847,10 @@ main { /* main 태그에 일반적인 콘텐츠 컨테이너 스타일 적용 */
     }
 
     /* variable.html 모바일 스타일 */
-    .variable-main-content h2 {
-        font-size: 2rem;
-    }
-    .variable-intro {
-        font-size: 1rem;
-        padding: 0 0.5rem;
+    .variable-overview-banners {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
     }
     .variable-overview-item {
         width: 90%;
@@ -882,7 +871,7 @@ main { /* main 태그에 일반적인 콘텐츠 컨테이너 스타일 적용 */
     }
     .variable-description {
         font-size: 1rem;
-        padding: 0; /* 모바일에서는 패딩 제거 */
+        padding: 0;
     }
     .variable-description strong {
         font-size: 1.05rem;
@@ -893,7 +882,7 @@ main { /* main 태그에 일반적인 콘텐츠 컨테이너 스타일 적용 */
     header h1 {
         font-size: 1.8rem;
     }
-    nav button {
+    .page-move-btn {
         font-size: 0.9rem;
         padding: 0.6rem 1rem;
     }
@@ -933,14 +922,20 @@ main { /* main 태그에 일반적인 콘텐츠 컨테이너 스타일 적용 */
     .project-info p {
         font-size: 0.85rem;
     }
-}
 
-/* 푸터 스타일 */
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #5C3A21;
-    color: #fff;
-    margin-top: 2rem;
-    font-size: 0.9rem;
+    .cafe-name {
+        font-size: 1.6rem;
+    }
+    .overview-photo {
+        height: 120px;
+    }
+    .recipe-item h3 {
+        font-size: 1.4rem;
+    }
+    .recipe-thumbnail {
+        height: 150px;
+    }
+    .variable-name {
+        font-size: 1.6rem;
+    }
 }
