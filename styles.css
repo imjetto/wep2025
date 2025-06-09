@@ -334,7 +334,7 @@ nav button:hover {
     transform: translateY(-2px);
 }
 
-/* --- recipe.html 스타일 --- */
+/* --- recipe.html 스타일 (가독성 개선) --- */
 .recipe-main-content {
     max-width: 1200px;
     margin: 2rem auto;
@@ -353,12 +353,13 @@ nav button:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
+    padding: 1rem; /* 그리드 컨테이너 자체의 내부 여백 */
 }
 
 .recipe-item {
     background-color: white;
     border-radius: 12px;
-    padding: 2rem;
+    padding: 2rem; /* 내부 패딩을 늘려 콘텐츠 여백 확보 */
     flex: 1;
     min-width: 300px;
     max-width: 380px;
@@ -381,17 +382,32 @@ nav button:hover {
     margin-bottom: 1.2rem;
     border-bottom: 2px solid #E6B800;
     padding-bottom: 0.8rem;
+    text-align: center; /* 레시피 제목 중앙 정렬 */
+}
+
+.recipe-details {
+    padding: 0 1rem; /* 텍스트 좌우 여백 추가 */
 }
 
 .recipe-details p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.7;
-    white-space: pre-wrap;
+    font-size: 1.05rem; /* 글자 크기 살짝 키움 */
+    color: #444; /* 텍스트 색상 좀 더 진하게 */
+    line-height: 1.9; /* 줄 간격 대폭 증가 */
+    margin-bottom: 1rem; /* 단락 아래 여백 */
+    white-space: pre-wrap; /* 줄 바꿈 유지 */
 }
 
+.recipe-details p strong { /* 볼드체 부분에 대한 스타일 */
+    color: #5C3A21; /* 핵심 키워드 색상 강조 */
+    font-weight: 700;
+    display: block; /* 줄 바꿈 */
+    margin-top: 1.2rem; /* 각 섹션 위 여백 */
+    margin-bottom: 0.5rem; /* 제목과 내용 사이 여백 */
+    font-size: 1.1rem; /* 제목보다 살짝 작게 */
+}
+
+
 /* --- index.html 시각적 개선을 위한 스타일 --- */
-/* (기존 body 스타일보다 우선순위가 낮도록 조정 또는 병합) */
 .container {
     max-width: 1200px;
     width: 100%;
@@ -400,7 +416,7 @@ nav button:hover {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     text-align: center;
-    margin: 2rem auto; /* 중앙 정렬 및 여백 */
+    margin: 2rem auto;
 }
 
 .main-title {
