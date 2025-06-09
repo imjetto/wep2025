@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
 }
 
+/* --- teamproject.html 및 하위 페이지 공통 헤더 스타일 --- */
 header {
     background-color: #5C3A21;
     color: white;
@@ -53,6 +54,7 @@ nav button:hover {
     transform: translateY(-2px);
 }
 
+/* --- teamproject.html 히어로 섹션 스타일 --- */
 .hero {
     position: relative;
     width: 100%;
@@ -66,7 +68,7 @@ nav button:hover {
     color: white;
 }
 
-.hero img {
+.hero img { /* 배경 이미지 */
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -77,16 +79,43 @@ nav button:hover {
     z-index: -1;
 }
 
-.hero h2 {
+.hero-overlay { /* hero 섹션의 내용 컨테이너 */
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.hero-overlay h2 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero p {
+.hero-overlay p {
     font-size: 1.5rem;
     max-width: 700px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+}
+
+.additional-hero-image { /* 히어로 섹션에 추가된 커피 아이콘 이미지 */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.additional-hero-image:hover {
+    transform: scale(1.05);
 }
 
 #scrollBtn {
@@ -108,6 +137,7 @@ nav button:hover {
     transform: translateY(-3px);
 }
 
+/* --- teamproject.html 잡지식 코너 섹션 스타일 --- */
 #intro {
     padding: 4rem 1rem;
     background-color: white;
@@ -143,6 +173,7 @@ nav button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    scroll-margin-top: 100px; /* 고정 헤더에 의해 가려지지 않도록 스크롤 마진 추가 */
 }
 
 .banner:hover {
@@ -168,128 +199,398 @@ nav button:hover {
     transform: translateY(-2px);
 }
 
+/* --- cafe.html 스타일 --- */
+.cafe-main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.cafe-overview-banners {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.cafe-overview-item {
+    background-color: #F8F8F8;
+    border-radius: 12px;
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cafe-overview-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.overview-photo {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.overview-name {
+    font-size: 1.8rem;
+    color: #5C3A21;
+    margin: 0;
+}
+
+.cafe-detail-section {
+    display: none; /* 기본적으로 숨김 */
+    background-color: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out; /* 부드럽게 나타나는 애니메이션 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cafe-detail-section.active {
+    display: block; /* 활성화 시 보임 */
+}
+
+/* .cafe-item은 cafe-detail-section 내의 컨텐츠 정렬용으로 사용 */
+.cafe-detail-section .cafe-item {
+    display: flex;
+    flex-direction: column; /* 기본은 세로 */
+    align-items: center;
+    text-align: center;
+    background-color: transparent; /* 배경색 제거 */
+    box-shadow: none; /* 그림자 제거 */
+    padding: 0; /* 패딩 제거 */
+}
+
+.cafe-name {
+    font-size: 2.2rem;
+    color: #5C3A21;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.cafe-content {
+    display: flex;
+    flex-direction: column; /* 모바일에서 세로로 정렬 */
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.cafe-photo {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cafe-details {
+    flex: 1;
+    text-align: left;
+    width: 100%;
+    max-width: 700px; /* 상세 설명 최대 너비 */
+}
+
+.cafe-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.naver-map-link {
+    display: inline-block;
+    background-color: #03C75A;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.naver-map-link:hover {
+    background-color: #02a34b;
+    transform: translateY(-2px);
+}
+
+/* --- recipe.html 스타일 --- */
+.recipe-main-content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+
+.recipe-main-content h2 {
+    font-size: 2.5rem;
+    color: #5C3A21;
+    margin-bottom: 2.5rem;
+}
+
+.recipe-grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.recipe-item {
+    background-color: white;
+    border-radius: 12px;
+    padding: 2rem;
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.recipe-item h3 {
+    font-size: 1.8rem;
+    color: #5C3A21;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid #E6B800;
+    padding-bottom: 0.8rem;
+}
+
+.recipe-details p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+/* --- index.html 시각적 개선을 위한 스타일 --- */
+/* (기존 body 스타일보다 우선순위가 낮도록 조정 또는 병합) */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background-color: white;
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    margin: 2rem auto; /* 중앙 정렬 및 여백 */
+}
+
+.main-title {
+    font-size: 3.2rem;
+    color: #333;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #5C3A21;
+}
+
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.link-card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.link-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    background-color: #f2f2f2;
+    border-color: #d0d0d0;
+}
+
+.link-card h3 {
+    font-size: 1.7rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #5C3A21;
+    font-weight: 700;
+}
+
+.link-card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+.primary-card {
+    background-color: #E6B800;
+    color: white;
+    box-shadow: 0 6px 15px rgba(230, 184, 0, 0.3);
+}
+
+.primary-card h3, .primary-card p {
+    color: white;
+}
+
+.primary-card:hover {
+    background-color: #FFD700;
+    box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+}
+
+/* --- 반응형 디자인 (모든 페이지 공통) --- */
+@media (min-width: 768px) {
+    /* cafe.html 상세 섹션 정렬 */
+    .cafe-detail-section .cafe-content {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+    }
+    .cafe-detail-section .cafe-content:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+    .cafe-detail-section .cafe-photo {
+        width: 40%;
+        max-width: none;
+    }
+    .cafe-detail-section .cafe-details {
+        width: 60%;
+    }
+}
+
 @media (max-width: 768px) {
+    /* teamproject.html 및 하위 페이지 헤더/네비게이션 */
     header h1 {
         font-size: 2rem;
     }
-
     nav ul {
         flex-direction: column;
         gap: 0.8rem;
     }
-
     nav button {
         width: 80%;
         margin: 0 auto;
     }
 
+    /* teamproject.html 히어로 섹션 */
     .hero {
         height: 400px;
     }
-
-    .hero h2 {
+    .hero-overlay h2 {
         font-size: 2.5rem;
     }
-
-    .hero p {
+    .hero-overlay p {
         font-size: 1.2rem;
         padding: 0 1rem;
     }
+    .additional-hero-image {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1.5rem;
+    }
 
+    /* teamproject.html 잡지식 코너 */
     #intro h2 {
         font-size: 2.2rem;
     }
-
     .banners {
         flex-direction: column;
         align-items: center;
     }
-
     .banner {
         width: 90%;
         max-width: 400px;
         padding: 1.5rem;
     }
+
+    /* cafe.html 모바일 스타일 */
+    .cafe-overview-item {
+        width: 90%;
+        max-width: 400px;
+        padding: 1rem;
+    }
+    .overview-photo {
+        height: 150px;
+    }
+    .overview-name {
+        font-size: 1.5rem;
+    }
+    .cafe-detail-section {
+        padding: 1.5rem;
+    }
+    .cafe-name {
+        font-size: 1.8rem;
+    }
+    .cafe-description {
+        font-size: 1rem;
+    }
+
+    /* recipe.html 모바일 스타일 */
+    .recipe-grid-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .recipe-item {
+        width: 90%;
+        max-width: 450px;
+    }
+    .recipe-main-content h2 {
+        font-size: 2rem;
+    }
+    .recipe-item h3 {
+        font-size: 1.6rem;
+    }
+
+    /* index.html 모바일 스타일 */
+    .container {
+        padding: 1.5rem;
+    }
+    .main-title {
+        font-size: 2.5rem;
+    }
+    .link-grid {
+        grid-template-columns: 1fr;
+    }
+    .link-card {
+        padding: 1.2rem;
+    }
+    .link-card h3 {
+        font-size: 1.5rem;
+    }
+    .link-card p {
+        font-size: 0.9rem;
+    }
 }
-
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>추출레시피</title>
-    <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-    <header>
-        <h1>☕ 추출레시피</h1>
-        <nav>
-            <ul>
-                <li><button onclick="location.href='teamproject.html'">홈으로 돌아가기</button></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="recipe-main-content">
-        <h2>✎ 다양한 추출 레시피</h2>
-        <section class="recipe-grid-container">
-            <div class="recipe-item">
-                <h3>1. 🧮 4:6 메소드 (Tetsu Kasuya)</h3>
-                <div class="recipe-details">
-                    <p>
-                        **준비**<br>
-                        원두 20 g, 물 300 g, 분쇄도는 중–거칠게, 물 온도 약 93 °C<br><br>
-                        **단계 흐름**<br>
-                        0:00–0:15 — 60 g 물을 중앙부터 나선형으로 부어 ‘블룸’ 시작.<br>
-                        0:15–0:45 — 추출 안정화 30초.<br>
-                        0:45–1:00 — 짧게 또 60 g 추출.<br>
-                        반복 구조 — ‘붓기 15초 + 기다림 30초’를 총 5회 반복 (총 300 g 붓고, 약 3분 소요).<br>
-                        3:30경 — 드리퍼 제거 및 추출 종료.<br><br>
-                        **푸어 방식**<br>
-                        중앙 → 바깥 → 중앙 순 나선형 흐름;<br>
-                        처음 두 번은 풍미 조절, 마지막 세 번은 농도 조절
-                    </p>
-                </div>
-            </div>
-
-            <div class="recipe-item">
-                <h3>2. 🔄 하이브리드 침지–포어오버 (Emi Fukahori’s Hario Switch)</h3>
-                <div class="recipe-details">
-                    <p>
-                        **준비**<br>
-                        원두 14 g, 물 200 g, 온도 93 °C<br><br>
-                        **단계 흐름**<br>
-                        0:00 — Bloom: 밸브 닫고 물 50 g 붓기.<br>
-                        0:00–0:30 — 30초 침지 유지.<br>
-                        0:30 — 밸브 개방, 물 150 g을 중심에 연속적으로 붓기(1분 10초까지)<br>
-                        1:10~2:20 — 총 2분 20초까지 추출 유지.<br>
-                        2:20 — 추출 완료<br><br>
-                        **푸어 방식**<br>
-                        처음엔 침지, 이후는 중심 향해 연속 붓기;<br>
-                        물 공급량과 온도 변화로 단맛, 산미, 바디 균형 조절
-                    </p>
-                </div>
-            </div>
-
-            <div class="recipe-item">
-                <h3>3. 🌀 인버티드 AeroPress 방식</h3>
-                <div class="recipe-details">
-                    <p>
-                        **준비**<br>
-                        원두 17 g, 물 250 g (50 g bloom + 200 g 메인), 폐기물 최소화;<br>
-                        분쇄도: 테이블 소금 정도<br><br>
-                        **단계 흐름**<br>
-                        0:00 — 뒤집은 상태에서 원두 넣고 50 g 물을 붓고 고르게 젖춤; 스터링 후 40초 블룸<br>
-                        0:40–1:00 — 나머지 200 g 천천히 붓고, 다시 젖죽이듯 저어줌.<br>
-                        1:00 — 필터 캡 조립, 1분 30초까지 더 기다림.<br>
-                        1:30 — 컵 위로 뒤집고 20–30초간 서서히 플런징 (‘쉬익’ 소리날 때까지).<br>
-                        두 단계 마무리 — 필요 시 뜨거운 물로 희석, 감압 방식 마감<br><br>
-                        **푸어 방식**<br>
-                        플런지가 아니라 블룸과 메인 붓기로 구성된 침지법.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
-</html>
