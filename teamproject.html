@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>에스프레소의 모든 것</title>
+    <title>에스프레소 연구소</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -11,19 +11,20 @@
         <h1>☕ 에스프레소 연구소</h1>
         <nav>
             <ul>
-                <li><button id="nav-cafe-btn">카페소개</button></li>
-                <li><button id="nav-recipe-btn">추출레시피</button></li>
-                <li><button id="nav-variable-btn">추출변수</button></li>
+                <li><button class="page-move-btn" data-target="cafe.html">카페소개</button></li>
+                <li><button class="page-move-btn" data-target="recipe.html">추출레시피</button></li>
+                <li><button class="page-move-btn" data-target="variable.html">추출변수</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <!-- 히어로 섹션: 배경 이미지는 CSS로 처리 -->
         <section class="hero">
-            <img src="asset/coffee.jpg" alt="따뜻한 김이 피어오르는 커피 한 잔과 원두가 놓인 배경 이미지" />
             <div class="hero-overlay">
                 <h2>커피의 모든 것</h2>
                 <p>알고 싶었던 커피 상식과 레시피를 한곳에서 만나보세요.</p>
+                <!-- 추가적인 히어로 이미지 (이전과 동일하게 유지) -->
                 <img src="https://placehold.co/200x200/8D6E63/FFFFFF?text=Coffee+Icon" alt="갈색 커피잔 모양의 아이콘" class="additional-hero-image">
                 <button id="scrollBtn">더 알아보기</button>
             </div>
@@ -33,11 +34,15 @@
             <h2>잡지식 코너</h2>
             <p class="intro-description">커피에 대한 흥미로운 잡지식을 여기서 만나보세요!</p>
             <div class="banners">
-                <div class="banner" id="cafe-banner-intro"> <button id="intro-cafe-btn">카페소개</button>
+                <!-- 잡지식 코너 배너 버튼: class="page-move-btn"과 data-target 추가 -->
+                <div class="banner" id="cafe-banner-intro">
+                    <button class="page-move-btn" data-target="cafe.html">카페소개</button>
                 </div>
-                <div class="banner" id="recipe-banner-intro"> <button id="intro-recipe-btn">추출레시피</button>
+                <div class="banner" id="recipe-banner-intro">
+                    <button class="page-move-btn" data-target="recipe.html">추출레시피</button>
                 </div>
-                <div class="banner" id="variable-banner-intro"> <button id="intro-variable-btn">추출변수</button>
+                <div class="banner" id="variable-banner-intro">
+                    <button class="page-move-btn" data-target="variable.html">추출변수</button>
                 </div>
             </div>
         </section>
